@@ -1,0 +1,139 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Flow",
+  "patterns": [
+    {
+      "include": "#all"
+    }
+  ],
+  "repository": {
+    "all": {
+      "patterns": [
+        {
+          "include": "#code"
+        }
+      ]
+    },
+    "code": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#operators"
+        },
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#constants"
+        },
+        {
+          "include": "#storage"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash",
+          "begin": "//",
+          "end": "^"
+        },
+        {
+          "name": "comment.block",
+          "begin": "/\\*\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "match": "(?<![a-zA-Z]\\d*)\\d+",
+          "name": "constant.numeric.flow"
+        },
+        {
+          "match": "\\b(true|false)\\b",
+          "name": "constant.language.boolean.flow"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "=>",
+          "name": "keyword.operator.pipe.flow"
+        },
+        {
+          "match": "~>",
+          "name": "keyword.operator.subscribe.flow"
+        },
+        {
+          "match": "\\b(return|for|if|else|switch|case|default|continue|break)\\b",
+          "name": "keyword.control.flow"
+        },
+        {
+          "match": "\\b(from|import)\\b",
+          "name": "keyword.control.import.flow"
+        },
+        {
+          "match": "((\\s\\*{1}\\s)|(\\s\\-{1}\\s)|(\\s\\+{1}\\s)|(\\s\\/{1}\\s))",
+          "name": "keyword.operator.arithmetic.flow"
+        },
+        {
+          "match": "((\\s&&\\s)|(\\s\\|\\|\\s))",
+          "name": "keyword.operator.logical.flow"
+        },
+        {
+          "match": "((\\s==\\s)|(\\s!=\\s)|(\\s>\\s)|(\\s<\\s))",
+          "name": "keyword.operator.comparison.flow"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(let|const|type)\\b",
+          "name": "keyword.flow"
+        },
+        {
+          "match": "\\b(int|string|bool|void|error)\\b",
+          "name": "storage.type.flow"
+        },
+        {
+          "match": "\\b(isError|filter|map|print)\\b",
+          "name": "entity.name.function.flow"
+        },
+        {
+          "match": "\\<(\\w+)(,\\s(\\w+))*\\>",
+          "captures": {
+            "1": {
+              "name": "storage.type.generic.flow"
+            },
+            "3": {
+              "name": "storage.type.generic.flow"
+            }
+          }
+        }
+      ]
+    },
+    "storage": {
+      "patterns": [
+        {
+          "match": "\\b(class|struct|interface)\\b",
+          "name": "support.class.flow"
+        },
+        {
+          "match": "\\b(private|public|protected|final|export|implements|extends)\\b",
+          "name": "storage.modifier.flow"
+        },
+        {
+          "match": "\\b(constructor|super)\\b",
+          "name": "support.function.flow"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.flow"
+}

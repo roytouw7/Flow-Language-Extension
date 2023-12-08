@@ -1,0 +1,25 @@
+{
+  "name": "flow-lang",
+  "displayName": "Flow Lang",
+  "description": "Syntax highlighting for the Flow language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "flow",
+      "aliases": ["Flow", "flow"],
+      "extensions": [".flow"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "flow",
+      "scopeName": "source.flow",
+      "path": "./syntaxes/flow.tmLanguage.json"
+    }]
+  }
+}
