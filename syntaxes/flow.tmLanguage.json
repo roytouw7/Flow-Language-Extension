@@ -30,6 +30,15 @@
         },
         {
           "include": "#storage"
+        },
+        {
+          "include": "#support"
+        },
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#meta"
         }
       ]
     },
@@ -82,12 +91,32 @@
           "name": "keyword.operator.arithmetic.flow"
         },
         {
-          "match": "((\\s&&\\s)|(\\s\\|\\|\\s))",
+          "match": "((\\s&&\\s)|(\\s\\|\\|\\s)|(\\s>\\s)|(\\s>=\\s)|(\\s<=\\s))",
           "name": "keyword.operator.logical.flow"
         },
         {
           "match": "((\\s==\\s)|(\\s!=\\s)|(\\s>\\s)|(\\s<\\s))",
           "name": "keyword.operator.comparison.flow"
+        },
+        {
+          "match": "\\.\\.\\.",
+          "name": "keyword.operator.spread.flow"
+        },
+        {
+          "match": "\\s+\\|\\s+",
+          "name": "keyword.operator.type.union.flow"
+        },
+        {
+          "match": "\\s+\\&\\s+",
+          "name": "keyword.operator.type.intersection.flow"
+        },
+        {
+          "match": "\\*",
+          "name": "keyword.operator.type.pointer.flow"
+        },
+        {
+          "match": "\\&",
+          "name": "keyword.operator.type.reference.flow"
         }
       ]
     },
@@ -98,12 +127,8 @@
           "name": "keyword.flow"
         },
         {
-          "match": "\\b(int|string|bool|void|error)\\b",
+          "match": "\\b(int|string|bool|void|error|any|unknown)\\b",
           "name": "storage.type.flow"
-        },
-        {
-          "match": "\\b(isError|filter|map|print)\\b",
-          "name": "entity.name.function.flow"
         },
         {
           "match": "\\<(\\w+)(,\\s(\\w+))*\\>",
@@ -121,7 +146,7 @@
     "storage": {
       "patterns": [
         {
-          "match": "\\b(class|struct|interface)\\b",
+          "match": "\\b(class|struct|interface|package)\\b",
           "name": "support.class.flow"
         },
         {
@@ -129,8 +154,61 @@
           "name": "storage.modifier.flow"
         },
         {
-          "match": "\\b(constructor|super)\\b",
+          "match": "\\b(constructor|super|new)\\b",
           "name": "support.function.flow"
+        },
+        {
+          "match": "\\b(this)\\b",
+          "name": "variable.language.this.flow"
+        }
+      ]
+    },
+    "support": {
+      "patterns": [
+        {
+          "match": "\\b(isError|filter|map|print|range)\\b",
+          "name": "support.function.flow"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.flow"
+        },
+        {
+          "begin": "\\'",
+          "end": "\\'",
+          "name": "string.quoted.single.flow"
+        },
+        {
+          "begin": "\\`",
+          "end": "\\`",
+          "name": "string.quoted.other.flow",
+          "patterns": [
+            {
+              "begin": "\\$\\{",
+              "end": "\\}",
+              "name": "variable.other.flow"
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "patterns": [
+        {
+          "match": "\\w+(\\[).+(\\]){1,}(\\s+|\\;)",
+          "captures": {
+            "1": {
+              "name": "meta.brace.square.flow"
+            },
+            "2": {
+              "name": "meta.brace.square.flow"
+            }
+          }
         }
       ]
     }
