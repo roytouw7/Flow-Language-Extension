@@ -1,5 +1,6 @@
 {
   "name": "flow-lang",
+  "publisher": "Flow-Lang",
   "displayName": "Flow Lang",
   "description": "Syntax highlighting for the Flow language",
   "version": "0.0.1",

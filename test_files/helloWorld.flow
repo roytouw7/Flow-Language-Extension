@@ -1,0 +1,10 @@
+package main
+
+/**
+    Hello World, 08/12/2023
+*/
+
+const main = () => {
+    "Hello World"
+        ~> print;
+}

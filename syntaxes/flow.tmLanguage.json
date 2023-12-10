@@ -117,6 +117,10 @@
         {
           "match": "\\&",
           "name": "keyword.operator.type.reference.flow"
+        },
+        {
+          "match": "=",
+          "name": "keyword.operator.assignment.flow"
         }
       ]
     },
