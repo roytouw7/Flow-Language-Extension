@@ -3,7 +3,7 @@
   "publisher": "Flow-Lang",
   "displayName": "Flow Lang",
   "description": "Syntax highlighting for the Flow language",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.84.0"
   },
@@ -11,16 +11,25 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "flow",
-      "aliases": ["Flow", "flow"],
-      "extensions": [".flow"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "flow",
-      "scopeName": "source.flow",
-      "path": "./syntaxes/flow.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "flow",
+        "aliases": [
+          "Flow",
+          "flow"
+        ],
+        "extensions": [
+          ".flow"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "flow",
+        "scopeName": "source.flow",
+        "path": "./syntaxes/flow.tmLanguage.json"
+      }
+    ]
   }
 }
