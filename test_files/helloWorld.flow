@@ -8,3 +8,5 @@ const main = () => {
     "Hello World"
         ~> print;
 }
+
+"hello ${world} !"

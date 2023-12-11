@@ -178,19 +178,14 @@
     "string": {
       "patterns": [
         {
-          "begin": "\"",
-          "end": "\"",
-          "name": "string.quoted.double.flow"
-        },
-        {
           "begin": "\\'",
           "end": "\\'",
           "name": "string.quoted.single.flow"
         },
         {
-          "begin": "\\`",
-          "end": "\\`",
-          "name": "string.quoted.other.flow",
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.flow",
           "patterns": [
             {
               "begin": "\\$\\{",

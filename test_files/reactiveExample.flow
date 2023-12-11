@@ -1,0 +1,36 @@
+package main;
+
+from time import sleep, SECOND;
+
+const main = () => {
+    const secondsCounter, complete = interval(1);
+    const secondsIsEven = secondsCounter % 2 == 0;
+
+    secondsCounter
+        => (i) => "second: ${i}"
+        ~> print;
+    
+    secondsIsEven
+        => (isEven) => isEven ? "second: ${i} is even!" : "second ${i} is uneven!"
+        ~> print;
+    
+    time.sleep(time.SECOND * 120);
+    complete();
+}
+
+// interval starts a thread, returns a counter which updates every sleep seconds, returns complete function to stop
+const interval = (sleep int) => (counter int, complete () => void) {
+    let counter = 0;
+    let completed = false;
+
+    const complete = () => completed = true;
+
+    thread () => {
+        for !completed {
+            counter = counter + 1;
+            time.sleep(time.SECOND * sleep);
+        }
+    }
+
+    return counter, complete;
+}
